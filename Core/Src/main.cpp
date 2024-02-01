@@ -103,9 +103,11 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	//gets the x value of the piece that was placed in the board if their was any
 	int x = run_kernel();
-    /* USER CODE END WHILE */
+
 	if (x != -1) {
+		//gets the y value of the piece that was placed in the board if their was any
 		int y = get_y(0);
 		bool winner_declared = check_win({x, y});
 		if (winner_declared) {

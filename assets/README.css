@@ -1,0 +1,44 @@
+html {
+    background-image: url(https://uk.farnell.com/productimages/large/en_GB/2493816-40.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: grey;
+    background-size: 70%;
+}
+
+body {
+    margin: 10%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    opacity: 90%;
+}
+
+section {
+    opacity: 100%;
+}
+
+h1, h2, h3 {
+    text-decoration: underline gold;
+}
+
+h4 {
+    text-decoration: underline;
+}
+
+p {
+    text-indent: 40px;
+}
+
+@media only screen and (max-width: 904px) {
+    html {
+        background-attachment: fixed;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 0%;
+        opacity: 100%;
+    }
+}

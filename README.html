@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <head lang="en">
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
+        <link rel="stylesheet" href="./assets/README.css">
+    </head>
+</html>
+
+<body>
+    <h1>Connect 4 Documentation</h1>
+
+    <section id="table-of-contents">
+        <h2>Table of Contents</h1>
+        <ul>
+            <li><a href="#dev-environment">Dev Environment</a></li>
+            <li><a href="#modules">Modules</a></li>
+        </ul>
+    </section>
+
+    <section id="dev-environment">
+        <h2>Dev Environment</h1>
+        <h3>Install the IDE</h3>
+        <p>Our preferred IDE is STM32Cube. This is because one can easily configure output and input pins of the NUCLEO board. Click <a href="https://www.st.com/en/development-tools/stm32cubeide.html">here</a> to install.</p>
+        <p>Create a workspace directory somewhere on your computer. This is where the IDE will search for your projects.</p>
+        <p>Inside that directory, create a folder for the Connect 4 project.</p>
+
+        <h3>GitHub Repository</h3>
+        <p>The link to the GitHub Repository is <a href="https://github.com/Kazmania21/connect4">here</a>. Initialize a <em>Git</em> repository in your Connect 4 project folder using an app like Git Bash or GitHub Desktop, add the GitHub Repository as a remote origin, and pull the contents of the GitHub repository into that project folder.</p>
+    </section>
+
+    <section id="modules">
+        <h2>Modules</h2>
+        <p>Most of the code we are going to be editing is in the "{Project Directory}/Core/Src" folder.</p>
+
+        <h3>main.cpp</h3>
+        <p>This module will serve as the entry point into our application. The main bulk of our code will be in the "while(1)" loop.</p>
+
+        <h3>kernel.h</h3>
+        <p>This module checks for input signals on the NUCLEO board.</p>
+
+        <h4>run_kernel()</h4>
+        <p>Takes no arguments and returns an integer.</p>
+        <p>Currently loops through the states list and returns the x coordinate of the "target" that was hit. If there is no target hit, it returns -1.</p>
+
+        <h3>y_getter.h</h3>
+
+        <h4>get_y(int x)</h4>
+        <p>Takes the x coordinate (as an integer) of the target hit. Returns an integer y based on the number of pieces in column x.</p>
+        <p>During this function, the list that tracks the height of each column will have the x column be incremented by 1.</p>
+
+        <h3>win_checker.h</h3>
+        <p>This module tracks the players turn and the location of their pieces. This information is used to check if a player has won.</p>
+
+        <h4>change_turn()</h4>
+        <p>Takes no arguments and returns void.</p>
+        <p>Changes the turn_number from 1 to 2 or vice versa. Changes the turn_player_locations variable to hold a reference to the list that holds the locations of the current player's pieces.</p>
+
+        <h4>check_win(list[int] location)</h4>
+        <p>Takes a list (of integers) of the position of the piece being "inserted" into the board. Returns a Boolean if the current player won.</p>
+        <p>Inserts the location parameter into the turn_player_locations list and checks in all directions relative to the new pieces to see if four pieces are connected (the player won).</p>
+    </section>
+</body>

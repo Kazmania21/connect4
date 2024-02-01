@@ -21,6 +21,7 @@
  HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_11),
  HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_12)*/
 
+//Reads the input pins and returns true if one of them is active
 int run_kernel(){
 	list<GPIO_PinState> states = {HAL_GPIO_ReadPin(IN1_GPIO_Port, IN1_Pin),
 								  HAL_GPIO_ReadPin(IN2_GPIO_Port, IN2_Pin),
